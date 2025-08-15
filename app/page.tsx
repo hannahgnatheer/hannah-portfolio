@@ -51,12 +51,11 @@ interface ProjectCardProps {
 }
 
 const tokens = {
-  accent: "from-blue-700 via-sky-500 to-teal-400",
-  glass: "backdrop-blur-md bg-blue-900/20 border border-teal-400/20",
-  textPrimary: "text-blue-100",
-  textSecondary: "text-teal-200"
+  accent: "from-[#5B2A86] via-[#9D4EDD] to-[#00D1B2]",  // purple → amethyst → teal
+  glass: "backdrop-blur-md bg-[#1A264A]/40 border border-[#D4AF37]/20",
+  textPrimary: "text-[#F7F3FF]",     // porcelain-ish headings
+  textSecondary: "text-[#C8CBE2]"    // soft cool text
 };
-
 
 const skills: string[] = [
   "Python","Pandas","scikit-learn","XGBoost","LightGBM","TensorFlow","PyTorch",
@@ -154,7 +153,7 @@ const Section: React.FC<SectionProps> = ({ id, title, icon, children }) => (
 
 const Hero: React.FC = () => (
   <div className="relative overflow-hidden">
-    <div className="absolute inset-0 -z-10 bg-gradient-to-br opacity-30 from-indigo-600 via-sky-500 to-emerald-400" />
+    <div className="absolute inset-0 -z-10 bg-gradient-to-br opacity-30 from-[#5B2A86] via-[#9D4EDD] to-[#00D1B2]" />
     <div className="max-w-6xl mx-auto px-5 md:px-10 py-16 md:py-24">
       <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-3xl md:text-5xl font-bold leading-tight">
         Hannah Genneath Natheer
@@ -165,12 +164,12 @@ const Hero: React.FC = () => (
       </motion.p>
       <div className="mt-6 flex flex-wrap gap-3">
         <a href="#projects"><Button className="rounded-2xl">View Projects</Button></a>
-        <a href="#contact"><Button variant="outline" className="rounded-2xl">Contact</Button></a>
+        <a href="#contact"><Button variant="outline" className="rounded-2xl border-[#00D1B2] text-[#00D1B2]">Contact</Button></a>
         <a href="/Hannah_Natheer_CV.pdf" target="_blank" rel="noreferrer"><Button variant="ghost" className="rounded-2xl"><Download className="w-4 h-4 mr-2"/>CV</Button></a>
       </div>
       <div className="mt-6 flex flex-wrap gap-2">
         {badges.map((b: string, i: number) => (
-          <span key={i} className={`text-sm px-3 py-1 rounded-full ${tokens.glass}`}>{b}</span>
+          <span key={i} className="text-xs px-2.5 py-1 rounded-full border border-[#D4AF37]/30">{i}</span>
         ))}
       </div>
     </div>
@@ -249,7 +248,7 @@ export default function Portfolio(): React.ReactElement {
   }, []);
 
   return (
-    <div className="min-h-screen text-white bg-[#0b1020] selection:bg-white/20">
+    <div className="min-h-screen text-white bg-[#0B1D3A] selection:bg-white/20">
       {/* Top Nav */}
       <div className="sticky top-0 z-20 backdrop-blur supports-[backdrop-filter]:bg-black/20">
         <div className="max-w-6xl mx-auto px-5 md:px-10 h-14 flex items-center justify-between">
